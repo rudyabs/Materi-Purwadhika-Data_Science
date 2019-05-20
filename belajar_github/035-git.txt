@@ -1,0 +1,13 @@
+# git init
+# git status
+# git add . 
+# git add namafile
+# git commit -m "asdamdnaksdn"
+# git log
+# git log --oneline
+# git checkout "id" -> melihat ke versi "id" tertentu ("FILE JANGAN DIEDIT")
+# git checkout master -> kembali ke master
+# git reset <commit id> -- hard         -> kembali ke versi id tertentu dan hapus commit 
+# git remote add <alias_repo> <link_repository>
+# git push -u <alias_repo/link_repository> master
+# git reset
