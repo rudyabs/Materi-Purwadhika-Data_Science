@@ -1,0 +1,178 @@
+SETUP MySQL 
+win:
+1. open terminal/cmd
+2. cd C:\Program Files\MySQL\MySQL Server 8.0\bin
+3a. mysql -u <username> -p 
+3b. alt: mysql --user=username --password=password
+4. enter password: 
+5. mysql>show databases;
+
+mac:
+1. open terminal cd /usr/local/mysql/bin
+2. cd /usr/local/mysql/bin
+3. ./mysql -u <nama user> -p 
+enter password: .....
+
+Melihat database
+mysql> show databases;
+
+jika ingin dijalankan dr terminal vs code
+- cd C:\Program Files\MySQL\MySQL Server 8.0\bin
+- .\mysql
+
+untuk keluar sql:
+exit;
+
+Membuat database di mysql
+- create database <nama_databases>;
+
+Delete database
+- drop database <nama_databases>;
+
+Menggunakan database
+- use <nama_databases>;
+
+Cek tempat database dikerjakan
+- select database();
+
+Melihat table di database
+- show tables;
+
+
+Membuat table database
+- create table <nama_table>(
+    -> id int,
+    -> name varchar(),
+    -> city varchar()
+    ->);
+
+
+null
+    - jika ingin semua data di include maka "null" status "NO"
+
+key 
+    -primary: data satu dgn yang lainnya berbeda tidk boleh kosong, sebagai acuan
+    -composite: penggabungan data satu dgn yang lain untuk membuat key yg unik
+
+extra
+    - informasi tambahan
+
+melihat <select> dari table
+    - select * from karyawan;
+
+memasukan data dalam table
+    - insert into <nama_table> (heading) values (1, 'Andi', 'Depok');
+    - insert into <nama_table> (heading) values
+        (2, 'Budi', 'Bdng'),
+        (3, 'Caca', 'Jkrt');
+
+melihat status table
+    - describe <nama_table>;
+
+menampilkan data dari heading tertentu
+    - select <nama_table> from <nama_table>;
+    - select <nama_heading1>, <nama_heading2> from <nama_table>; #lebih dari satu header
+    - select * from pegawai where <contoh : id = 2>
+
+delete semua data
+    - delete from <nama_table>;
+
+delete data tertentu
+    - delete from <nama_table> where <kategorinya>;
+
+update data 
+    - update <nama_table> set <nama_heading> = <'value'>;
+    - update <nama_table> set <nama_heading> = <'value'> where <nama_heading> = <'value'>;
+    - update pegawai set
+        <nama_heading1> = <'value'>, <nama_heading2> = <'value'>
+        where <nama_heading> = <value>;
+
+menambah column
+    - alter table <nama_table>
+        add column
+        <nama_heading_baru> int not null default <value>;
+
+mengubah/modify column
+    - alter table <nama_table>
+        modify column
+        <nama_heading> int default <value>
+        after <nama_heading>;
+    - contoh 
+         alter table pegawai
+        -> modify column
+        -> gaji int default 4000000
+        -> after birth;
+
+menghilangkan column
+    - alter table <nama_table>
+        drop column
+        <nama_heading>;
+
+mengambil data dari parameter tertentu
+    - select * from <nama_table>
+        where <nama_heading> between <values1> and <values2>;
+    - select * from <nama_table>
+        where <nama_heading> > <value> and <nama_heading1> = <values>;
+    - select * from <nama_table>
+        where <nama_heading> like 'value%'; # awal
+    - select * from <nama_table>
+        where <nama_heading> like '%value'; # akhir
+    - select * from <nama_table>
+        where <nama_heading> like '%value%'; # include
+    - select * from <nama_table>
+        where <nama_heading> not like '%value'; #tidak include awalan
+
+menghitung jumlah data
+    - select count(*) from <nama_table>; #keseluruhan
+    - select count(*) as <value> from <nama_table>; 
+    - select count(*) as <value> from <nama_table> where <parameter>;
+
+manambahkan informasi tambahan
+    - select <nama_heading1>, <nama heading2>, <parameter> as <value> from <nama_table>;
+
+melihat max/min value dari table
+    - select min(<value>) as <value> from <nama_table>;
+    - select * from <nama_table>
+        where <nama_heading> = (select max/min(<nama_heading> as <value> from <nama_table>);
+
+menampilkan semua data yang mempunyai properti tertentu
+auto_increment ->
+default '<pengganti saat null> ' ->
+varchar(<jumlah>) -> jumlah maksimal karakter
+null/not null -> apakah data bisa kosong/tidak
+unique -> data harus berbeda
+enum (<pilihan>) -> membuat beberapa jenis pilihan
+timestamp ->
+default current_timestamp ->
+primary key (id) -> 
+where -> 
+order by ->
+
+contoh buat heading dengan struktur data
+ create table pegawai(
+    -> id int auto_increment,
+    -> name varchar(50) default 'anonim',
+    -> email varchar(100) not null unique,
+    -> birth date not null,
+    -> gender enum('P', 'L'),
+    -> created_at timestamp default current_timestamp,
+    -> primary key (id)
+    -> );
+
+contoh command line:
+- select * from pegawai where id % 2 = 0 order by id desc;
+
+buat pseudo table untuk melihat (merge table dan temp table)
+merge table
+create view <nama_alias_table> as
+query table yang diinginkan 
+contoh:
+ create view dataku as
+    -> select * from mytable where usia > 23;
+
+temp table
+create algorithm=<jenis_table> view <nama_alias_table> as
+query table yang diinginkan
+contoh:
+ create algorithm=temptable view viewku as
+    -> select * from mytable where usia > 23;    

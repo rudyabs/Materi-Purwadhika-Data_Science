@@ -1,0 +1,4 @@
+ctrl+shift+p : buka interpreter dan linter
+Installation Python : Anaconda or Straight Python?
+Cek Version, Extentions, Pilih Interpreter dll.
+Pembuatan komentar dengan "#" diawal baris (shortcut : ctrl + /)

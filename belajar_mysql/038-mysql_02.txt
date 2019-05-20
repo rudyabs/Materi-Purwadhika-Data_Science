@@ -1,0 +1,65 @@
+melihat table type
+    - show full tables;
+melihat max value
+    - select max(<nama_heading>) as <alias> from <nama table>;
+melihat min value
+    - select min(<nama_heading>) as <alias> from <nama table>;
+melihat min & max value
+    - select 
+        max(<nama_heading>) as (<alias1>)
+        min(<nama_heading>) as (<alias2>)
+        from <nama table>;
+melihat max/min value semua data
+    -  select * from <nama_table>
+        -> where <nama_heading> =
+        -> (select <max/min>(<nama_heading>) from <nama_heading>);
+melihat max/min value dengan parameter lain
+    - select * from <nama_table>
+        -> where <nama_heading> =
+        -> (select <max/min>(<nama_heading>) from <nama_heading>)
+            and <nama_heading> = "<parameter>";
+menghapus column > 1
+    - alter table <nama_table>
+        drop <nama_heading>, drop <nama_heading>;
+menambahkan column di tempat tertentu
+    - alter table <nama_table>
+        -> add column
+        -> kota varchar(50) default "Jakarta"
+        -> after <nama_heading>;
+edit data dengan kriteria/parameter tertentu
+    - update <nama table> set
+        -> <nama_heading> = '<value>'
+        -> where <nama_heading> % 2 <> 0;
+urut berdasarkan kriteria tertentu
+    - select * from <nama_table>
+        order by <nama_heading> desc;
+urut dengan kriteria lebih dr satu
+    - select * from pegawai
+        -> order by
+        -> kota desc,
+        -> id desc;
+rata-rata <nama_heading> tertentu
+    - select avg(<nama_heading>) as <alias> from <nama_table>;
+rata2 dengan kriteria
+    - select avg(gaji) as rata_upah_jkt from pegawai
+        -> where kota = 'jakarta';
+rata2 dengan kriteria dan grup
+    - select avg(gaji) as rata_upah_kota from pegawai
+        -> group by kota;
+rata2 dengan kriteria dan grup dengan menampilkan grup  
+    -  select kota, avg(gaji) as rata_upah from pegawai
+    -> group by kota;
+
+    -   select kota, avg(gaji) as rata_upah from pegawai
+        -> group by kota
+        -> where rata_upah > 5000
+        -> ;
+
+    -select kota, avg(gaji) as rata_upah from pegawai
+        -> group by kota
+        -> having rata_upah > 5000;
+    
+    - select name, gaji from pegawai
+        -> where gaji >
+        -> (select avg(gaji) from pegawai where kota = 'Jakarta')
+        -> ;

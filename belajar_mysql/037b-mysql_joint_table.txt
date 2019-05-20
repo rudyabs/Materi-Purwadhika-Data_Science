@@ -1,0 +1,138 @@
+buat 2 table 
+table 1
+    create table rank(
+        -> id int not null auto_increment,
+        -> status varchar(30) default 'beginner',
+        -> primary key(id));
+table 2
+     create table rank_user(
+        -> id int not null auto_increment,
+        -> status varchar(30) default 'beginner',
+        -> primary key(id));
+
+foreign key = key untuk menghub satu table dgn yg lain
+
+prosedur join table
+     select * from
+    -> user join rank_user
+    -> on user.id = rank_user.id;
+
+insert value table 1 & 2
+     insert into user (user, kota) values
+    -> ('And', 'Jkt'),
+    -> ('Bud', 'Bdg'),
+    -> ('Cow', 'Ckg'),
+    -> ('Don', 'Jkt'),
+    -> ('Ewa', 'Dpk');
+
+     insert into rank_user (status) values
+    -> ('Platinum'),
+    -> ('Silver'),
+    -> ('Platinum'),
+    -> ('Gold'),
+    -> ('Silver');
+
+    select user.id, user, kota, status from
+        -> user join rank.user
+        -> using(id);
+
+    select * from
+        -> rank_user join user
+        -> using(id)
+        -> ;
+inner join
+     select * from
+    -> user inner join rank_user
+    -> using(id);
+left join
+     select * from
+    -> user left join rank_user
+    -> using(id);
+right join
+    select * from
+        -> user right join rank_user
+        -> using(id);
+
+
+
+pengaplikasian join table
+     create database toko_online;
+
+     use toko_online;
+
+     select database();
+
+      create table users(
+    -> id_user int not null auto_increment,
+    -> username varchar(30) default 'no_name',
+    -> created_at timestamp default current_timestamp,
+    -> edited_at timestamp default current_timestamp on update current_timestamp,
+    -> primary key (id_user)
+    -> );
+
+    describe users;
+
+     insert into users (username) values
+    -> ('And'),
+    -> ('Bud'),
+    -> ('Cac');
+
+     select * from users;
+
+     update users set
+    -> username = 'Ando'
+    -> where id_user = 1;
+
+     select * from users;
+
+      create table products(
+    -> id_product int not null auto_increment,
+    -> product_name varchar(30) default 'BarangX',
+    -> primary key (id_product));
+
+     insert into products (product_name) values
+    -> ('Drone'),
+    -> ('Kemeja');
+
+     create table transaction(
+    -> id_user varchar(30) not null,
+    -> id_product varchar(30) not null);
+
+     alter table transaction
+    -> modify column
+    -> id_user int not null,
+    -> modify column
+    -> id_product int not null;
+
+     insert into transaction values
+    -> (1, 1),
+    -> (1, 2),
+    -> (2, 1),
+    -> (3, 1);
+
+    basic join (a-c)-b
+     select * from
+    -> users inner join transaction
+    -> on users.id_user = transaction.id_user
+    -> inner join products
+    -> on transaction.id_product = products.id_product;
+
+     select username, product_name from
+    -> users inner join transaction
+    -> on users.id_user = transaction.id_user
+    -> inner join products
+    -> on transaction.id_product = products.id_product;
+
+     select username, product_name from
+    -> users, products, transaction
+    -> where
+    -> users.id_user = transaction.id_user
+    -> and
+    -> products.id_product = transaction.id_product;
+
+     select username, product_name from
+    -> users u, products p, transaction t
+    -> where
+    -> u.id_user = t.id_user
+    -> and
+    -> p.id_product = t.id_product;

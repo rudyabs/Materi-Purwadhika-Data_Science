@@ -1,0 +1,4 @@
+Instalasi Numpy
+    -   pip install numpy
+    # alternatif
+    -   py -m pip install numpy

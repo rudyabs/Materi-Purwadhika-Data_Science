@@ -1,0 +1,17 @@
+Indexing 
+    -> mengambil single/satu karakter dari string(atau data type yang mendukung ordered sequence)
+    -> indexing menggunakan [] setelah string
+    
+    -> indexing dimulai dari angka 0
+        character   :   H   E   L   L   O
+        index       :   0   1   2   3   4 
+        rev. index  :   0  -4  -3  -2  -1
+    
+Slicing
+    -> mengambil sub-bagian dari banyak karakter 
+    -> syntax dari slicing:
+        [start:stop:step]
+        >> start    : angka index dimana slice dimulai
+        >> stop     : index yang akan dilewati tetapi tidak dimasukan(not include)
+        >> step     : loncatan yang akan diambil  
+    

@@ -1,0 +1,11 @@
+pip install kaggle
+pip install --user kaggle
+kaggle --version
+
+manual buat directory
+\Uers\<nama_users> mkdir ~/.kaggle
+
+kaggle datasets download -d karangadiya/fifa19 --unzip (--force)
+
+liat list datasets kaggle
+    kaggle datasets list --sort-by 'updated'

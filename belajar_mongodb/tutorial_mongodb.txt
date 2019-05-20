@@ -1,0 +1,85 @@
+Aktivasi server (windows)
+-   C:\Program Files\MongoDB\Server\4.0\bin>mongod --dbpath C:\data <path yang diinginkan>
+
+Aktivasi database 
+# harus aktivasi server awal
+-   C:\Program Files\MongoDB\Server\4.0\bin>mongod
+
+Melihat database
+-   show dbs 
+# alternatif
+-   show databases
+-   show databases;
+
+Tempat database dikerjakan
+-   db
+
+menggunakan database tertentu
+-   use <nama_db>
+
+menghapus database tertentu
+# gunakan database terlebih dahulu
+    -   use <nama_db>
+# hapus database
+    -   db dropdatabase()
+
+membuat collection
+    -   use <nama_collection>
+    -    db.createUser({ user: "rudyabs", pwd: "kecapi48", roles: ["readWrite", "dbAdmin"] })
+
+mengisi collection
+    -    db.produk.insert(
+        ... {nama: "Drone", harga: 2000000})
+
+mengisi collection dengan array
+    -    db.produk.insert(
+        ... [
+        ... {nama: "kemeja", harga: 200000},
+        ... {nama: "sepeda", harga: 2500000},
+        ... {nama: "laptop", harga: 15000000, merk: "asus"}
+        ... ]
+        ... )
+
+melihat isi collection
+    -   db.produk.find()
+    #   alternatif - pretty
+    -    db.produk.find().pretty()
+melihat isi collection tertentu
+    dengan "key"
+    -   db.produk.find({nama: "Drone"}).pretty()
+    dengan parameter (contoh: harga >= 1000000)
+    -   db.produk.find({harga: {$gte: 1000000}}).pretty()
+    dengan parameter dan limit (contoh: harga <= 1000000 ) limit :1
+    -   db.produk.find({harga: {$lte: 1000000}}).pretty().limit(1)
+    lebih dari satu parameter
+    -   db. produk.find( {$and:[ {harga: {$gt: 1000000}}, {warna: "hitam"} ]}).pretty()
+
+update data tertentu dalam collection
+    #   mengubah properti tertentu
+    -   db.produk.update(
+        ... {nama: "Drone"}, # mencari properti
+        ... {nama: "drone rusak", harga: 12000000} 
+        ... );
+    #   mengganti salah satu properti
+    -    db.produk.update(
+        ... {nama: "kemeja"},
+        ... {$set: {harga: 250000}})
+
+rename propertti(key) dari suatu data
+    -  db.produk.update({nama: 'headset'}, {$rename: {'warna': 'color'}})
+
+
+parameter
+- $gte  :   greater than equal
+- $lte  :   less than equal
+- $gt   :   greater than
+- $lt   :   less than
+
+.pretty()   :   merapihkan data yang diperlihatkan
+.limit()    :   limit data yang ditampilkan
+.sort()     :   sortir data
+.skip()     :   loncat data yang ditampilkan
+.count()    :   melihat jumlah data
+
+instalasi package pymongo
+-   pip install pymongo

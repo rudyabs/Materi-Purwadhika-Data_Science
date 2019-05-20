@@ -1,0 +1,19 @@
+# sambung mysql ke python dengan flask
+# jika flask sdh terinstall maka: install package flask_mysqldb flask_cors
+# flask_cors berfungsi untuk menonaktifkan fitur cors di web browser
+ create table mytable (
+    -> id int auto_increment,
+    -> nama varchar(30) default 'No Name',
+    -> usia int(3) default 0,
+    -> primary key(id)
+    -> );
+
+ insert into mytable (nama, usia) values
+    -> ('And', 20),
+    -> ('Bon', 21),
+    -> ('Cow', 22);
+
+ insert into mytable (nama, usia) values
+    -> ('And', 20),
+    -> ('Bon', 21),
+    -> ('Cow', 22);

@@ -1,0 +1,8 @@
+contoh file untuk test
+abcdef
+ghijkl
+mnopqr
+stuvwx
+yz
+0123456789
+!@#$%^&*()
