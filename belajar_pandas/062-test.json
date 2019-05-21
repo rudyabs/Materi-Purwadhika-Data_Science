@@ -1,0 +1,17 @@
+[
+    {
+        "id": 0,
+        "nama": "Ali",
+        "kota": "Ambon"
+    },
+    {
+        "id": 1,
+        "nama": "Budi",
+        "kota": "Bandung"
+    },
+    {
+        "id": 2,
+        "nama": "Caca",
+        "kota": "Cikarang"
+    }
+]
