@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>
+            <b>PREDIKSI KESELAMATAN PENUMPANG TITANIC</b>
+        </h1>
+        <form action="http://localhost:5000/hasil" method="POST">
+        <p>
+            <b>Jenis Kelamin : </b>
+            <select name="sex" required>
+                <option value="male" selected>Pria</option>
+                <option value="female">Wanita</option>
+            </select>
+        </p>
+        <p>
+            <b>Usia : </b>
+            <input name="age" type="number" placeholder="Usia" min="0" max="100" required>
+        </p>
+        <p>
+            <b>Kelas Kapal : </b>
+            <select name="pclass" type="number" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        <p>
+            <b>Jumlah Saudara : </b>
+            <input name="sibsp" type="number" placeholder="Bawa Saudara" required min=0>
+        </p>
+        <p>
+            <b>Orang Tua : </b>
+            <input name="parch" type="number" placeholder="Bawa Org Tua" required min=0>
+        </p>
+        <p>
+            <b>Tarif Kapal : </b>
+            <input name="fare" type="number" placeholder="Harga tarif kapal" required min=0>
+        </p>
+        <p>
+            <input type="submit" value="Submit Data Prediksi">
+        </p>
+        </form>
+    </center>
+</body>
+</html>

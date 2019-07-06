@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Titanic</title>
+</head>
+<body style="margin:30px">
+    <h2>Titanic Survivor</h2>
+    <form action="http://localhost:1234/hasil" method="POST">
+        <br>Sex:
+        <select name="sex" style="width: 108px">
+            <option value="0">Female</option>
+            <option value="1">Male</option>
+            <option selected hidden></option>
+        </select>
+        
+        <br><br>Class:
+        <select name="pclass" style="width: 95px">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option selected hidden></option>
+        </select>
+
+
+        <br><br>Age:
+        <input name="age" placeholder="Insert Age" type="number" min="0" max="100" style="width: 100px"/>
+
+        <br><br>Siblings:
+        <input name="sibsp" placeholder="Insert Siblings" type="number" min="0" max="100" style="width: 100px"/>
+
+        <br><br>Parch:
+        <input name="parch" placeholder="Insert parents or children" type="number" min="0" max="100" style="width: 100px"/>
+
+        <br><br>Fare:
+        <input name="fare" placeholder="Insert Fare" type="number" min="0" style="width: 100px"/>
+        
+        <br><br><input type="submit" value="Submit Woiiii">
+    </form>
+
+</body>
+</html>
