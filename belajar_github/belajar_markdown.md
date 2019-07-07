@@ -1,10 +1,15 @@
-# Judul 1 (H1)
-## Judul 2 (H2)
-### Judul 3 (H3)
-#### Judul 4 (H4)
-##### Judul 5 (H5)
-###### Judul 6 (H6)
-#
+# Judul 1 (H1) #
+
+## Judul 2 (H2) ##
+
+### Judul 3 (H3) ###
+
+#### Judul 4 (H4) ####
+
+##### Judul 5 (H5) #####
+
+###### Judul 6 (H6) ######
+
 *Italic*
 
 **Bold**
@@ -19,18 +24,16 @@ __Bold__
 
 halo **gaes** apa kabar?
 
-#
-
 Daftar menu hari ini:
+
 - Nasi Goreng
 - Bubur Ayam
 - Minuman:
-    - Teh Manis
-    - Jus
-
-#
+  - Teh Manis
+  - Jus
 
 Rangking kelas XIPA1:
+
 1. Adon
 2. Bobon
 3. Colon
@@ -39,7 +42,7 @@ Rangking kelas XIPA1:
 
 #
 
-untuk memasukan link:
+Untuk memasukan link:
 
 [statement](ini adalah link)
 
