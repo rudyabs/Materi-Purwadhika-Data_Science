@@ -11,3 +11,5 @@
 # git remote add <alias_repo> <link_repository>
 # git push -u <alias_repo/link_repository> master
 # git reset
+# git config --global core.autocrlf true
+# git config --global core.autocrlf false
