@@ -1,98 +1,101 @@
-# Judul 1 (H1)
-## Judul 2 (H2)
-### Judul 3 (H3)
-#### Judul 4 (H4)
-##### Judul 5 (H5)
-###### Judul 6 (H6)
-#
-*Italic*
+# Tutorial Git and Git Bash #
 
-**Bold**
+Change Directory
 
-_Italic_
+    cd <path_name>/
 
-__Bold__
+Initialize Local Repository
 
-*__Bold and Italic__*
+    git init
 
-**_Bold and Italic_**
+Make **folder/directory** inside path with *git bash*
 
-halo **gaes** apa kabar?
+    mkdir <name_directory>
 
-#
+Make file inside *git bash*
 
-Daftar menu hari ini:
-- Nasi Goreng
-- Bubur Ayam
-- Minuman:
-    - Teh Manis
-    - Jus
+    touch <file_name.extension>
 
-#
+Show git repository **status**
 
-Rangking kelas XIPA1:
-1. Adon
-2. Bobon
-3. Colon
-    1. ASA
-    2. BASA
+    git status
 
-#
+Add all file in directory to the **local repository** (staging area)
 
-untuk memasukan link:
+    git add .
 
-[statement](ini adalah link)
+**Commit** (actions ex: delete, add, etc) file to the **local repository**
 
-**_[Belajar html comment](https://www.w3schools.com/html/html_comments.asp)_**
+    git commit -m "<message>"
 
-#
+Add **specific** file to the **local repository** before commiting
 
-memasukan gambar
+    git add <file_name>
 
-dari route
+**Delete** file from the **local repository**
 
-![Smile](./smiley.png)
+    git rm --cached <file_name>
 
-dari folder
+## Configuration ##
 
-![Pepe](./Gambar_git/pepe.jpg)
+Set **global username** that reveal **your username** whenever you commit to local or cloud/remote repository.
 
-dari link
+    git config --global user.name <your_name/username/alias>
 
-![]()
+Set **global email** that reveal **your email** whenever you commit to local or cloud/remote repository.
 
-#
+    git config --global user.email <your_email>
 
-Pak Budiman berkata:
-> Kapan nikah? Kapan Lulus? KapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapanKapan
+## Branches ##
 
-#
+Make branches from the main (master) **code base**.  
 
-Menampilkan code
+Create **master** branch :
 
-```
-print("halo")
-```
+    git branch <name_branch>
 
-Menampilkan Code beserta program
+Go to specific **master** and **branch**
 
-```Python
-Print("Pakai Python")
-```
+    git checkout <name_branch_or_master>
 
-Run python di terminal:
+## Merge ##
 
-```bash
-$ cd c:\Program Files\OK
-$ py app.py
-```
+To merge specific **branch** file to **master**  
 
-#
+Back to **master** area
 
-Membuat tabel
+    git checkout master
 
-No. | Nama | Job |
-- | - | -
-1. | Aldo | Tukang Gorengan
-2. | Budi | Sales
-3. | Mam | Pilot
+**Merge** file
+
+    git merge <branch_name>
+
+## Remote Repository ##
+
+### How to upload file to cloud repository (github) ###
+
+Using **github** for hosting platform, create new repository, etc.  
+
+Add files to cloud repository **(github)**
+
+    git remote add <alias> <repository link>
+
+Push **master** to **online** repository
+
+    git push -u <alias/repository link> master
+
+Push **branch** to **online** repository
+
+    git push -u <alias/repository link> <branch_name>
+
+## Pull ##
+
+To **pull/clone** the **remote repository** so you can use for your *project*
+
+**Init** in the folder you want to do your project
+
+    git init
+
+Pull the **repository**
+
+    git pull <HTTPS link>
