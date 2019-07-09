@@ -120,5 +120,3 @@ df['prediksi_knn'] = model_knn.predict(df[['SL','SW','PL','PW']])
 print(df[df['target']]==0)
 print(df[df['target']]==1)
 print(df[df['target']]==2)
-
-
